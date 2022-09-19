@@ -1,0 +1,739 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+.mapRotation {
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Teko';
+    font-weight: normal;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgb(228, 224, 215);
+    background-size: cover;
+    background-image: url("../img/Default.jpg");
+    background-attachment: fixed;
+    background-position: center center;
+    position: relative;
+}
+
+.mapRotation {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 0;
+}
+
+.mainContent {
+    flex-basis: 70%;
+    position: relative;
+    width: 100%;
+    /* flex-grow: 1; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 120;
+    z-index: 2;
+    /* background-color: aqua; */
+    padding: 60px 0 30px 0;
+}
+
+html:before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    z-index: 0;
+    background-image: linear-gradient(rgba(228, 224, 215, 0.2), rgba(162, 0, 0, 0.9) 80%);
+}
+
+.gameType {
+    /* font-size: 65px; */
+    font-size: 55px;
+    line-height: .3;
+}
+
+.currMapName {
+    font-size: 195px;
+    line-height: .7;
+    box-shadow: 0px -10px 0px 0px rgba(222, 222, 222, 0.4) inset;
+    padding-top: 20px;
+    width: 80%;
+    background-color: rgba(222, 222, 222, 0.4);
+}
+
+.currMapTime {
+    font-size: 90px;
+    line-height: 1;
+}
+
+.nextMapImage {
+    font-size: 110px;
+    margin-top: 70px;
+    line-height: 0;
+}
+
+.nextMap {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: .03vw;
+    color: transparent;
+}
+
+.nextMapName {
+    margin-top: -20px;
+    font-size: 45px;
+}
+
+.nextMapTime {
+    font-size: 45px;
+    line-height: 1.4;
+}
+
+.brApex,
+.rgApex,
+.brArenas,
+.rgArenas {
+    background-size: cover;
+    background-position: center center;
+    background-image: url("../img/Default.jpg");
+
+}
+
+.subContent {
+    padding: 20px 0;
+    z-index: 120;
+    /* background-color: rgb(68, 255, 0); */
+    width: 100%;
+}
+
+#splide,
+.splide__track {
+    height: 180px;
+    z-index: 120;
+}
+
+.boxMapImage {
+    width: 100px;
+    border: solid 5px white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.boxMapImage:before {
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.3) 100%);
+    filter: blur(0) brightness(0);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.boxMapImage .text {
+    font-size: 45px;
+    z-index: 300 !important;
+}
+
+.selectedBorderBottom {
+    position: absolute;
+    height: 5%;
+    width: 101%;
+    margin: -1px;
+    bottom: 0%;
+    background-color: rgb(255, 255, 255);
+}
+
+.selectedBorderTop {
+    position: absolute;
+    height: 6%;
+    width: 50%;
+    margin: -1px;
+    top: 0%;
+    left: 0%;
+}
+
+.selectedBorderTop:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    transform-origin: 100% 100%;
+    transform: skewX(-30deg);
+}
+
+.selectedBorderTop:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    transform-origin: 100% 100%;
+    transform: skewX(30deg);
+}
+
+@media (min-width:800px) and (max-width:1200px) {
+    .gameType {
+        font-size: 5vw;
+    }
+
+    .currMapName {
+        font-size: 13vw;
+        padding-top: 1.5vw;
+        box-shadow: 0px -.7vw 0px 0px rgba(255, 255, 255, 0.3) inset;
+    }
+
+    .currMapTime {
+        font-size: 6vw;
+    }
+
+    .nextMapImage {
+        font-size: 8vw;
+        margin-top: 5vw;
+    }
+
+    .nextMapName {
+        margin-top: -1.35vw;
+        font-size: 3vw;
+    }
+
+    .nextMapTime {
+        font-size: 3vw;
+    }
+}
+
+@media (min-width:601px) and (max-width:900px) {
+    .gameType {
+        font-size: 40px;
+    }
+
+    .currMapName {
+        font-size: 125px;
+        padding-top: 12px;
+        box-shadow: 0px -6px 0px 0px rgba(255, 255, 255, 0.3) inset;
+    }
+
+    .currMapTime {
+        font-size: 70px;
+    }
+
+    .nextMapImage {
+        margin-top: 60px;
+        font-size: 90px;
+    }
+
+    .nextMapName {
+        margin-top: -16px;
+        font-size: 35px;
+    }
+
+    .nextMapTime {
+
+        font-size: 35px;
+    }
+
+    .boxMapImage .text {
+        font-size: 35px;
+        z-index: 300 !important;
+    }
+}
+
+@media (min-width:501px) and (max-width:720px) {
+    .gameType {
+        font-size: 6vw;
+    }
+
+    .currMapName {
+        font-size: 19vw;
+        padding-top: 1.5vw;
+        width: 90%;
+        padding-top: 2vw;
+        box-shadow: 0px -.9vw 0px 0px rgba(255, 255, 255, 0.3) inset;
+    }
+
+    .currMapTime {
+        font-size: 12vw;
+    }
+
+    .nextMapImage {
+        margin-top: 10vw;
+        font-size: 15vw;
+    }
+
+    .nextMapName {
+        margin-top: -2.7vw;
+        font-size: 6vw;
+    }
+
+    .nextMap {
+        -webkit-text-stroke-width: .1vw;
+    }
+
+    .nextMapTime {
+        font-size: 6vw;
+    }
+
+    .boxMapImage .text {
+        font-size: 35px;
+    }
+}
+
+@media (min-width:0px) and (max-width:500px) {
+    .gameType {
+        font-size: 7vw;
+    }
+
+    .currMapName {
+        font-size: 25vw;
+        padding-top: 3vw;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    .currMapTime {
+        font-size: 14vw;
+    }
+
+    .nextMapImage {
+        font-size: 23vw;
+    }
+
+    .nextMap {
+        -webkit-text-stroke-width: .1vw;
+    }
+
+    .nextMapName {
+        margin-top: -4.2vw;
+        font-size: 9vw;
+    }
+
+    .nextMapTime {
+        font-size: 9vw;
+    }
+
+    #splide,
+    .splide__track {
+        height: 200px;
+        z-index: 120;
+    }
+
+    .boxMapImage .text {
+        font-size: 35px;
+    }
+}
+
+/* ------------------------------------- Transition -------------------------------------*/
+.backgroundImage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    opacity: 0.5;
+    filter: sepia(100%);
+    background-image: url("../img/Background.png") !important;
+    background-position: center center;
+    z-index: 30;
+}
+
+.transition {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    /*  */
+    z-index: 10000;
+    background-color: rgb(228, 224, 215);
+    overflow: hidden !important;
+}
+
+.banner {
+    z-index: 10 !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 0 5.5vw;
+}
+
+.wide .left {
+    position: relative;
+    width: 30%;
+    height: 90vh;
+    background-color: rgb(227, 57, 57);
+    /* background-image: url("../img/Banner.jpg");
+        background-position: right center; */
+}
+
+.wide .left:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    border-right: 30% solid transparent;
+    border-left: 26.7vw solid transparent;
+    border-top: 40px solid rgb(227, 57, 57);
+    background-color: rgb(228, 224, 215);
+    transform-origin: 100% 100%;
+}
+
+.wide .middle {
+    z-index: 10;
+    width: 30%;
+    height: 100vh;
+    background-color: rgb(227, 57, 57);
+    /* background-image: url("../img/Banner.jpg");
+        background-position: center center; */
+    margin: 0 2%;
+}
+
+.wide .right {
+    position: relative;
+    width: 30%;
+    height: 90vh;
+    background-color: rgb(227, 57, 57);
+    /* background-image: url("../img/Banner.jpg");
+        background-position: right center; */
+}
+
+.wide .right:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    border-left: 30% solid transparent;
+    border-right: 26.7vw solid transparent;
+    border-top: 40px solid rgb(227, 57, 57);
+    background-color: rgb(228, 224, 215);
+    transform-origin: 100% 100%;
+}
+
+.narrow {
+    display: none;
+}
+
+.center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 5vw;
+    z-index: 11;
+    margin-top: -5%;
+}
+
+.center img {
+    position: absolute;
+    margin-top: 0%;
+    color: rgb(221, 255, 0);
+}
+
+.center .text {
+    z-index: 31;
+    text-align: center;
+    margin-top: 34%;
+    line-height: 0.8;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    color: rgb(228, 224, 215);
+
+}
+
+.transition {
+    animation-name: fadeInAnimation;
+    animation-duration: 0.2s;
+}
+
+@media (max-width:800px) {
+    .wide {
+        display: none;
+    }
+
+    .narrow {
+        display: flex;
+    }
+
+    .narrow .middle {
+        width: 80%;
+        height: 90vh;
+        background-color: rgb(227, 57, 57);
+        margin: 0 2%;
+    }
+
+    .narrow .middle:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: 5%;
+        border-left: 35.7vw solid transparent;
+        border-right: 35.7vw solid transparent;
+        border-top: 40px solid rgb(227, 57, 57);
+        background-color: rgb(228, 224, 215);
+        transform-origin: 100% 100%;
+    }
+
+    .center {
+        margin-top: -13%;
+    }
+
+    .center .text {
+        font-size: 8vw;
+        margin-top: 54%;
+    }
+
+    .center img {
+        width: 140vw;
+        height: 140vw;
+        animation-name: logoAnimationNarrow;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+}
+
+@media (max-width:576px) {
+    .center {
+        margin-top: -15%;
+    }
+}
+
+@media (min-width:801px) {
+    .center img {
+        width: 75vw;
+        height: 75vw;
+        animation-name: logoAnimationWide;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+}
+
+@media (min-height:0px) and (max-height:400px) {
+    .center img {
+        display: none;
+    }
+
+    .center {
+
+        margin-top: 0%;
+
+    }
+
+    .center .text {
+        font-size: 8vw;
+        margin-top: 0%;
+        transition: .1s !important;
+    }
+}
+
+@keyframes fromTopAnimation {
+    from {
+        margin-top: -10000px;
+        opacity: 0
+    }
+
+    to {
+        margin-top: 0px;
+        opacity: 1
+    }
+}
+
+@keyframes logoAnimationWide {
+    to {
+        width: 25vw;
+        height: 25vw;
+    }
+}
+
+@keyframes logoAnimationNarrow {
+    to {
+        width: 40vw;
+        height: 40vw;
+    }
+}
+
+@keyframes ToBottomAnimation {
+    from {
+        margin-top: 0px;
+        opacity: 1
+    }
+
+    to {
+        margin-top: 10000px;
+        opacity: 0
+    }
+}
+
+@keyframes ToBottomAnimation {
+    0% {
+        margin-top: 0px;
+        opacity: 1
+    }
+
+    50% {
+        margin-top: 0px;
+        opacity: 1
+    }
+
+    100% {
+        margin-top: 10000px;
+        opacity: 0
+    }
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeOutAnimation {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+/* Loading */
+.circleLoading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 10000000;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(228, 224, 215);
+}
+
+.circle {
+    width: 75px;
+    height: 75px;
+    background-color: rgb(146, 146, 146);
+
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.innerCircle {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(185, 185, 185);
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 50;
+    border: 4px rgb(228, 224, 215) solid;
+}
+
+.innerMostCircle {
+    width: 20px;
+    height: 20px;
+    background-color: #FD4E19;
+    border-radius: 100px;
+    border: 5px rgb(228, 224, 215) solid;
+    z-index: 100;
+}
+
+.innerCircle:after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 105%;
+    background-color: rgb(228, 224, 215);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: 4s rotation linear infinite;
+}
+
+.circle:after {
+    content: '';
+    position: absolute;
+    width: 10%;
+    height: 12px;
+    background-color: rgb(228, 224, 215);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: 4s rotation linear infinite reverse;
+}
+
+@keyframes rotation {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.transition,
+.mapRotation {
+    visibility: hidden;
+}
+
+
+/* Background Music */
+/* .playMusic {
+    width: 2vw;
+    height: 2vw;
+    padding: .8vw;
+    border: .3vw solid rgb(228, 224, 215); 
+}
+ */
+
+.playMusic {
+    position: absolute;
+    top: 28px;
+    left: 28px;
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    border-radius: 100px;
+    padding: 10px;
+    border: 3.3px solid rgb(228, 224, 215);
+}
+
+.musicController {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width:728px) {
+    .playMusic {
+        top: 24px;
+        left: 24px;
+        width: 15px;
+        height: 15px;
+        padding: 10px;
+        border: 3px solid rgb(228, 224, 215);
+    }
+}
