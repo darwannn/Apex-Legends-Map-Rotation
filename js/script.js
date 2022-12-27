@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
             xhr.onload = function () {
                 if (this.status == 200) {
                     var data = JSON.parse(this.responseText);
-                    /* console.log(data); */
+                    console.log(data);
                     /* Play Apex */
                     currBrApexMap = data.battle_royale.current.map;
                     currBrApextimer = data.battle_royale.current.remainingTimer;
